@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/all',async (req,res) => {
+  users = await models.User.findAll()
+
+  res.status(201).json(users)
+})
+
 router.post('/register' , async (req,res) => {
   if(!req.body.email || !req.body.firstName || !req.body.lastName){
     return res.status(401).json({
