@@ -20,7 +20,8 @@ module.exports = {
         references:{
           model: "Languages",
           key : "id"
-        }
+        },
+        onDelete: 'CASCADE'
       },
       proficiencyLvl: {
         type: Sequelize.INTEGER

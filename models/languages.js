@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Languages.hasMany(models.Proficiencies)
-
+      Languages.hasMany(models.Message)
     }
   };
   Languages.init({

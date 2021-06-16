@@ -24,4 +24,17 @@ router.post('/create', async (req,res) => {
     return res.status(201).json(newProf)
 })
 
+router.patch('/update' , async (req,res) => {
+    await models.Proficiencies.update({proficiencyLvl: req.body.profLvl},{
+        where:{
+            UserId: req.body.UserId,
+            LanguageId: req.body.LanguageId
+        }
+        
+    })
+    return res.status(201).json({
+        message: "successfully updated"
+    })
+})
+
 module.exports = router

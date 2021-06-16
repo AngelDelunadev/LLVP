@@ -28,10 +28,8 @@ router.patch("/update/prof/:languageId", async (req,res) => {
     let avg = 0
     proficiencies.forEach(e => {
         avg += e.proficiencyLvl
-        console.log(e.proficiencyLvl)
     });
     avg = Math.round(avg/proficiencies.length) 
-    console.log(avg)
 
     await models.Languages.update({avgProficiency: avg},{
          where:{
