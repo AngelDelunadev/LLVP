@@ -3,7 +3,7 @@ var router = express.Router();
 const models = require('../models')
 const session = require('express-session');
 
-router.get('/:languageId/', async(req,res) => {
+router.get('/:languageId', async(req,res) => {
     const proficiencies = await models.Proficiencies.findAll({
         where: {LanguageId: req.params.languageId}
     })
