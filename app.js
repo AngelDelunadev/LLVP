@@ -11,7 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const languageRouter = require('./routes/language')
 const proficienciesRouter = require('./routes/proficiencies')
-
+const messageRouter = require('./routes/message')
 const db = require('./models')
 
 var app = express();
@@ -38,6 +38,8 @@ app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/language', languageRouter)
 app.use('/api/v1/proficiencies', proficienciesRouter)
+app.use('/api/v1/message', messageRouter)
+
 
 
 

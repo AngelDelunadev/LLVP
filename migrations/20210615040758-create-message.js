@@ -8,14 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      UserId: {
+      sender: {
         type: Sequelize.INTEGER,
         references:{
           model: "Users",
           key : "id"
         }
       },
-      UserId: {
+      receiver: {
         type: Sequelize.INTEGER,
         references:{
           model: "Users",

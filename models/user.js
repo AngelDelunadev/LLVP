@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.Proficiencies)
-      User.hasMany(models.Message)
     }
   };
   User.init({

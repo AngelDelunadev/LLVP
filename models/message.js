@@ -11,14 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Message.belongsTo(models.User)
-      Message.belongsTo(models.User)
+
       Message.belongsTo(models.Languages)
     }
   };
   Message.init({
-    UserId: DataTypes.INTEGER,
-    UserId: DataTypes.INTEGER,
+    sender: DataTypes.INTEGER,
+    receiver: DataTypes.INTEGER,
     LanguageId: DataTypes.INTEGER,
     text: DataTypes.STRING
   }, {
