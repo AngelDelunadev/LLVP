@@ -11,7 +11,29 @@ router.get('/:languageId', async(req,res) => {
    return res.status(201).json({
         proficiencies
     })
+})
 
+router.get('/userProf/:UserId', async(req,res) => {
+
+    if (!(isNaN(req.params.UserId))){
+        const proficiencies = await models.Proficiencies.findAll({
+            where: {UserId: req.params.UserId}
+        })
+        if(proficiencies.length>=1){
+            return res.status(201).json({
+                proficiencies
+            })
+        }
+    
+        return res.status(404).json({
+            error: "not found"
+        })
+    }
+    else{
+        return res.status(400).json({
+            error: "Please pass in a number"
+        })
+    }
 })
 
 router.post('/create', async (req,res) => {
